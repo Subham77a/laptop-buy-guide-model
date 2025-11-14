@@ -9,10 +9,10 @@ df = pickle.load(open('df.pkl','rb'))
 st.title("Laptop Price Predictor")
 
 # brand
-company = st.selectbox('Brand',df['Company'].unique())
+company = st.selectbox('Company',df['Company'].unique())
 
 # type of laptop
-type = st.selectbox('Type',df['TypeName'].unique())
+type = st.selectbox('Laptop-Type',df['TypeName'].unique())
 
 # Ram
 ram = st.selectbox('RAM(in GB)',[2,4,6,8,12,16,24,32,64])
@@ -21,10 +21,10 @@ ram = st.selectbox('RAM(in GB)',[2,4,6,8,12,16,24,32,64])
 weight = st.number_input('Weight of the Laptop')
 
 # Touchscreen
-touchscreen = st.selectbox('Touchscreen',['No','Yes'])
+touchscreen = st.selectbox('is it Touchscreen',['No','Yes'])
 
 # IPS
-ips = st.selectbox('IPS',['No','Yes'])
+ips = st.selectbox('does it have a IPS pannel',['No','Yes'])
 
 # screen size
 screen_size = st.slider('Scrensize in inches', 10.0, 18.0, 13.0)
@@ -39,9 +39,9 @@ hdd = st.selectbox('HDD(in GB)',[0,128,256,512,1024,2048])
 
 ssd = st.selectbox('SSD(in GB)',[0,8,128,256,512,1024])
 
-gpu = st.selectbox('GPU',df['Gpu brand'].unique())
+gpu = st.selectbox('Graphics card brand',df['Gpu brand'].unique())
 
-os = st.selectbox('OS',df['os'].unique())
+os = st.selectbox('Operating System',df['os'].unique())
 
 if st.button('Predict Price'):
     # Convert categorical Yes/No to numeric
